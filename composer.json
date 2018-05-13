@@ -1,0 +1,13 @@
+{
+    "name": "sanctuary_gaming/social",
+    "description": "PHP learning project to create a social network for gamers.",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Bruce Wopat",
+            "email": "bruce.wopat@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

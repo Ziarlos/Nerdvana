@@ -1,0 +1,241 @@
+@charset "UTF-8";
+/**
+ * This is for use globally, i.e., public and private pages
+ * maintaining consistency between the two locations.
+ */
+body {
+	padding-top: 70px;
+	overflow-x: hidden;
+}
+ 
+/**
+ * Font declarations
+ */
+h1 {
+	font: 24px/118% Verdana, Helvetica, sans-serif;
+	color: rbga(0, 0, 0, 1);;
+	font-weight: bold;
+}
+h2 {
+	font: 18px/118% Verdana, Helvetica, sans-serif;
+	color: rbga(0, 0, 0, 1);;
+	font-weight: bold;
+}
+h3 {
+	font: 14px/118% Verdana, Helvetica, sans-serif;
+	color: rbga(0, 0, 0, 1);;
+	font-weight: bold;
+}
+h4 {
+	font: 12px/118% Verdana, Helvetica, sans-serif;
+	color: rbga(0, 0, 0, 1);;
+	font-weight: bold;
+}
+h5 {
+	font: 10px/118% Verdana, Helvetica, sans-serif;
+	color: rbga(0, 0, 0, 1);;
+	font-weight: bold;
+}
+h6 {
+	font: 8px/118% Verdana, Helvetica, sans-serif;
+	color: rbga(0, 0, 0, 1);;
+	font-weight: bold;
+}
+li, p, th, td, div, span {
+	font: 12px/118% Verdana, Helvetica, sans-serif;
+	color: rbga(0, 0, 0, 1);;
+}
+
+/**
+ * Clear fix
+ */
+.clear {
+	clear: both;
+}
+
+/**
+ * Anchor Tag Declarations
+ */
+a:link {
+	color: rbga(0, 0, 0, 1);;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #808080;
+	text-decoration: underline;
+}
+
+a:visited {
+	color: rbga(0, 0, 0, 1);;
+	text-decoration: none;
+}
+
+/**
+ * Form Element Declarations
+ */
+/*
+@media only screen and (min-width: 1201px) {
+	input[type="text"], input[type="email"], input[type="password"] {
+		width: 150px;
+	}
+
+}
+@media only screen and (min-width: 901px) and (max-width: 1200px) {
+	input[type="text"], input[type="email"], input[type="password"] {
+		width: 125x;
+	}
+}
+@media only screen and (min-width: 400px) and (max-width: 900px) {
+	input[type="text"], input[type="email"], input[type="password"] {
+		width: 100px;
+	}
+}
+*/
+/**
+ * Element Style Declarations
+ */
+.alternate:nth-child(even) {
+	background-color: #CCCCCC;
+}
+
+.back_button {
+	width: 50%;
+	text-align: center;
+	margin: 15px auto;
+}
+
+/**
+ * Table Style Declarations
+ */
+table {
+	border-collapse: collapse;
+	border: none;
+}
+tr, td {
+	border: none;
+}
+
+
+/**
+ * Profile Style Declarations
+ */
+.profile_info {
+	width: 390px;
+	padding: 0;
+	margin: 0;
+/* 	float: left; */
+}
+.profile_info_label {
+/*	float: left; */
+	display: inline-block;
+	width: 85px;
+}
+.profile_info_description {
+	margin: 0;
+/*	float: left; */
+	display: inline-block;
+	width: 290px;
+}
+.profile_avatar {
+	width: 275px;
+	height: 350px;
+	float: right;
+	margin-top: -41px;
+	margin-right: 1px;
+	background-color: #CCC;
+	text-align: center;
+}
+.user-staff-rank0 {
+	color: #7B3F00;
+}
+.user-staff-rank1 {
+	font-weight: bold;
+	color: #FFC469;
+}
+.user-staff-rank2 {
+	font-weight: bold;
+	color: #FFB00F;
+}
+.user-staff-rank3 {
+	font-weight: bold;
+	color: #FF6103;
+}
+.user-staff-rank4 {
+	font-weight: bold;
+	color: #008080;
+}
+.user-staff-rank5 {
+	font-weight: bold;
+	color: #FF0000;
+}
+/* calendar */
+.calendar {
+	border-left: 1px solid #999;
+}
+.calendar-row	{
+
+}
+.calendar-day	{
+	height: 100px;
+	text-align: top;
+	font-size: 11px;
+	position: relative;
+}
+.calendar-day:hover {
+	background: #eceff5;
+}
+.calendar-day-np {
+	background: #eee;
+	min-height:80px;
+}
+.calendar-day-head {
+	background-color: rgba(100, 100, 100, 1.0);
+	font-weight:bold;
+	text-align:center;
+	width:120px;
+	padding:5px;
+	border-bottom:1px solid #999;
+	border-top:1px solid #999;
+	border-right:1px solid #999;
+}
+.day-number {
+	background: #999;
+	padding:5px;
+	color:#fff;
+	font-weight:bold;
+	float:right;
+	margin:-5px -5px 0 0; 
+	width:20px;
+	text-align:center;
+}
+/* shared */
+.calendar-day, .calendar-day-np { 
+	width:120px;
+	padding:5px; 
+	border-bottom:1px solid #999;
+	border-right:1px solid #999;
+}
+.today {
+	background: #789;
+}
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
