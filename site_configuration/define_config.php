@@ -14,7 +14,7 @@
  * @link     https://github.com/Ziarlos
  */
 
-$dotenv = new Dotenv\Dotenv(__DIR__, '.my_creds_file');
+$dotenv = new Dotenv\Dotenv(__DIR__);
 $dotenv->load();
 $dotenv->required(['HOSTNAME', 'USERNAME', 'PASSWORD', 'DATABASE'])->notEmpty();
 
