@@ -14,7 +14,7 @@
  * @link     https://github.com/Ziarlos
  */
 ob_start();
-//require_once 'site_configuration/site_info.php';
+
 require_once '/config/config.php';
 require_once 'includes/public_header.php';
 

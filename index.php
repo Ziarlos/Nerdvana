@@ -17,7 +17,7 @@ ob_start();
 session_start();
 
 require_once 'includes/public_header.php';
-//require_once 'site_configuration/site_info.php';
+
 require_once '/config/config.php';
 
 $action = isset($_GET['action']) ? $_GET['action'] : null;
