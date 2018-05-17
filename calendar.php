@@ -16,7 +16,8 @@
 session_start();
 ob_start();
 
-require_once 'site_configuration/site_info.php';
+//require_once 'site_configuration/site_info.php';
+require_once '/config/config.php';
 require_once 'includes/private_header.php';
 
 if (Authenticate::isLoggedIn()) {

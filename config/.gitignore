@@ -1,0 +1,9 @@
+<<<<<<< HEAD
+.env
+.htaccess
+vendor/
+=======
+.idea
+.my_creds_file
+vendor
+>>>>>>> 7cf68e3eff72d43b61fded642a36463dfbeaee5a

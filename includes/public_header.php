@@ -13,7 +13,7 @@
  * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
  * @link     https://github.com/Ziarlos
  */
-require_once './site_configuration/site_info.php';
+require_once './config/config.php';
 ?>     
 <!DOCTYPE html>
 <html lang="en">
