@@ -13,10 +13,10 @@
  * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
  * @link     https://github.com/Ziarlos
  */
+require_once './config/config.php';
+
 ob_start();
 session_start();
-
-require_once '/config/config.php';
 
 $action = isset($_GET['action']) ? $_GET['action'] : '';
 
@@ -41,7 +41,7 @@ case 'login':
             $_SESSION['user_id'] = $user['user_id'];
             $_SESSION['email'] = $user['email'];
             $_SESSION['login_status'] = true;
-            include_once 'site_configuration/site_info.php';
+            require_once './config/config.php';
             header('location: private_profile.php');
         } else {
             include_once 'includes/public_header.php';

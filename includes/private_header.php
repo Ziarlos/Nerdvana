@@ -13,6 +13,7 @@
  * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
  * @link     https://github.com/Ziarlos
  */
+require_once './config/config.php';
 ob_start();
 ?>
 <!DOCTYPE html>
