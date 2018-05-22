@@ -1,5 +1,10 @@
 <?php declare(strict_types=1);
 
+namespace Nerdvana;
+
+use PDO;
+use PDOException;
+
 /**
  * PDO database connection class
  * 

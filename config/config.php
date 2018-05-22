@@ -13,7 +13,16 @@
  * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
  * @link     https://github.com/Ziarlos
  */
-require_once './vendor/autoload.php';
+
+define('ROOT', dirname(__DIR__));
+
+require_once ROOT . '/vendor/autoload.php';
+
+use Nerdvana\Authenticate;
+use Nerdvana\Chat;
+use Nerdvana\Database;
+use Nerdvana\Forum;
+use Nerdvana\User;
 
 $dotenv = new Dotenv\Dotenv(__DIR__);
 $dotenv->load();
@@ -36,8 +45,8 @@ date_default_timezone_set('America/Los_Angeles');
 
 try {
     $driver_options = array(
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
     );
     $dbx = new PDO('mysql:host=' . DB_HOSTNAME . ';dbname=' . DATABASE . ';charset=UTF8', DB_USERNAME, DB_PASSWORD, $driver_options);
 }
@@ -46,18 +55,12 @@ catch (PDOException $ex) {
     echo $ex->getMessage();
 }
 
+$Database = new Database(DB_HOSTNAME, DB_USERNAME, DB_PASSWORD, DATABASE);
 /**
- * Load classes
+ * Have not finished the authentication script so it will be commented out for the moment
+ * $Authenticate = new Authenticate($Database); 
  */
 
-require_once './class/Database.class.php';
-require_once './class/Authenticate.class.php';
-require_once './class/User.class.php';
-require_once './class/Chat.class.php';
-require_once './class/Forum.class.php';
-
-$Database = new Database(DB_HOSTNAME, DB_USERNAME, DB_PASSWORD, DATABASE);
-$Authenticate = new Authenticate($Database);
 $User = new User($Database);
 $Forum = new Forum($Database, $User);
 $Chat = new Chat($Database);
@@ -82,4 +85,3 @@ function handleException($exception)
 }
 
 set_exception_handler('handleException');
-?>

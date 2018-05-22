@@ -1,5 +1,6 @@
 <?php declare(strict_types=1);
 
+namespace Nerdvana;
 /**
  * Global variables and constants will be defined in this page
  * These variables and constants may be used in multiple pages.

@@ -41,7 +41,7 @@ if (Authenticate::isLoggedIn()) {
 
     default:
     ?>
-    <h2> Welcome to the Gaming Forums, <?php echo $user['user_name']; ?>!</h2>
+    <h2> Welcome to Nerdvana, <?php echo $user['user_name']; ?>!</h2>
     <section class="user-profile-page">
         <dl class="profile_info">
             <dt class="profile_info_label">Username:</dt> <dd class="profile_info_description"> <?php echo $user['user_name']; ?></dd>
