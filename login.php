@@ -65,4 +65,3 @@ case 'logout':
 default:
 }
 ob_end_flush();
-?>

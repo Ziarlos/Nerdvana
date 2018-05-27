@@ -1,12 +1,6 @@
 <?php declare(strict_types=1);
 
 /**
- * Global variables and constants will be defined in this page
- * These variables and constants may be used in multiple pages.
- * Below we start a database connection.
- * Since PHP in moving to PDO and MySQLi, we no longer use MySQL.
- * PHP version 7+
- *
  * @category Social
  * @package  Social
  * @author   Ziarlos <bruce.wopat@gmail.com>
@@ -38,7 +32,7 @@ case 'view':
         </div>
         <?php
     } else {
-        Authenticate::invalidAuthorization();
+        echo '<div class="alert alert-warning">You must enter a numeric value for user id.</div>';
     }  
     break;
 
@@ -59,4 +53,3 @@ require_once 'includes/public_footer.php';
 $contents = ob_get_contents();
 // echo $contents;
 ob_end_flush();
-?>

@@ -26,7 +26,7 @@ require_once './config/config.php';
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>The Network - A Social Zone</title>
+    <title>Nerdvana - A Social Zone</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/global.css">
@@ -63,7 +63,7 @@ require_once './config/config.php';
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="javascript:void(0);">The Network</a>
+                    <a class="navbar-brand" href="javascript:void(0);">Nerdvana</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">

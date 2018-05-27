@@ -1,5 +1,6 @@
 <?php declare(strict_types=1);
 
+
 /**
  * Global variables and constants will be defined in this page
  * These variables and constants may be used in multiple pages.
@@ -17,6 +18,7 @@ ob_start();
 session_start();
 
 require_once 'includes/public_header.php';
+use Nerdvana\Authenticate as Authenticate;
 
 $action = isset($_GET['action']) ? $_GET['action'] : null;
 
@@ -336,6 +338,12 @@ case "terms_of_service":
     break;
     
 default:
+
+if (class_exists("Authenticate")) {
+    echo "Authenticate";
+} else {
+    echo "No Authenticate";
+}
 ?>
 <div class="jumbotron">
 <h2> Welcome to the Gaming Forum!</h2>
@@ -368,24 +376,3 @@ default:
 }
 require_once 'includes/public_footer.php';
 ob_end_flush();
-?>
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            

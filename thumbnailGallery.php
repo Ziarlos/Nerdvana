@@ -104,4 +104,3 @@ if (count($image_files)) {
 } else {
     echo '<p>There are no images in this gallery.</p>';
 }
-?>
