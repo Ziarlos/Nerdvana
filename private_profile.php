@@ -22,6 +22,10 @@ switch ($action) {
 case 'view':
     $viewed = $User->getUserInfo($_GET['user_id']);
     ?>
+<<<<<<< HEAD
+=======
+    <h2> Welcome to Nerdvana, <?php echo $user['user_name']; ?>!</h2>
+>>>>>>> ea909f18347467b41b058e6a32fec95405e467dc
     <section class="user-profile-page">
         <dl class="profile_info">
             <dt class="profile_info_label">Username:</dt> <dd class="profile_info_description"> <?php echo $viewed['user_name']; ?></dd>
@@ -101,4 +105,9 @@ if (file_exists(ROOT . '/class/Authenticate.php')) {
 require_once 'includes/private_footer.php';
 $contents = ob_get_contents();
 echo $contents;
+<<<<<<< HEAD
 ob_end_flush();
+=======
+ob_end_flush();
+?>
+>>>>>>> ea909f18347467b41b058e6a32fec95405e467dc
