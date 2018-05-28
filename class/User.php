@@ -3,16 +3,16 @@
 namespace Nerdvana;
 
 class User {
-    
+
     /**
-     * @var $Database Database object 
+     * @var $Database Database object
      */
     private $Database;
-    
+
     public function __construct(Database $Database) {
         $this->Database = $Database;
     }
-    
+
     /**
      * @name updateLastActiveTime
      * @purpose update the `last_active` field in the database per page load
@@ -23,7 +23,7 @@ class User {
     public function updateLastActiveTime($user_id) {
         $this->Database->query("UPDATE users SET last_active = NOW() WHERE user_id = :user_id", array(':user_id' => $user_id));
     }
-    
+
     /**
      * @name getUserInfo
      * @purpose return an array of information related to user
@@ -35,12 +35,12 @@ class User {
         $user = $this->Database->query("SELECT * FROM users WHERE user_id = :user_id", array(':user_id' => $user_id));
         if ($this->Database->count() == 0) {
             return 0;
-        }	
+        }
         else {
             return $user;
         }
     }
-    
+
     /**
      * @name getActiveUsers
      * @purpose return a list of users online within last 5 min
@@ -56,7 +56,7 @@ class User {
             return $users_online;
         }
     }
-    
+
     /**
      * @name getUserName
      * @purpose return name of user
@@ -68,13 +68,8 @@ class User {
         $info = $this->Database->query("SELECT user_name FROM users WHERE user_id = :user_id", array(':user_id' => $user_id));
         return $info;
     }
-    
+
     public function __destruct() {
         $this->Database = null;
     }
 }
-
-?>                        
-                            
-                            
-                            

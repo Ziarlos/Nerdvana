@@ -7,6 +7,7 @@
  * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
  * @link     https://github.com/Ziarlos
  */
+
 session_start();
 ob_start();
 
@@ -79,7 +80,7 @@ case 'view_board':
     </form>
     <?php
     break;
-    
+
 case 'view_topic':
     $topic_id = isset($_GET['topic_id']) ? $_GET['topic_id'] : '';
     $topic = $Forum->viewTopic($topic_id);
@@ -142,7 +143,7 @@ case 'view_topic':
     </form>
     <?php
     break;
-    
+
 case 'create_topic':
     $category_id = isset($_POST['category_id']) ? $_POST['category_id'] : '';
     $category = $Forum->getCategoryInfo($category_id);
@@ -152,7 +153,7 @@ case 'create_topic':
     echo '<p>Topic created!</p>';
     echo '<div class="back_button"><a href="forum.php">Back to Main Forums</a> || <a href="forum.php?action=view_board&amp;category_id=' . $category['category_id'] .'">' . $category['category_name'] . '</a></div>';
     break;
-    
+
 case 'reply':
     $topic_id = isset($_POST['topic_id']) ? $_POST['topic_id'] : '';
     $topic = $Forum->viewTopic($topic_id);
@@ -164,7 +165,7 @@ case 'reply':
         echo '<a href="forum.php">Back to Main Forums</a> || <a href="forum.php?action=view_board&amp;category_id=' . $category['category_id'] . '">' . $category['category_name'] . '</a> || <a href="forum.php?action=view_topic&amp;topic_id=' . $topic['topic_id'] . '">Back to ' . $topic['topic_subject'] . '</a>';
     echo '</div>';
     break;
-    
+
 case 'edit_reply':
     if (isset($_GET['post_id'])) {
         $post_id = filter_input(INPUT_GET, 'post_id', FILTER_SANITIZE_NUMBER_INT);
@@ -204,13 +205,13 @@ case 'edit_reply':
                     </div>
                 </div>
             </fieldset>
-        </form>				
+        </form>
         <?php
     } else {
         echo '<div class="alert alert-warning">You do not have permission to edit this post.</div>';
     }
     break;
-    
+
 case 'delete_reply':
     if (isset($_GET['post_id'])) {
         $post_id = filter_input(INPUT_GET, 'post_id', FILTER_SANITIZE_NUMBER_INT);
@@ -223,7 +224,7 @@ case 'delete_reply':
         echo '<div class="alert alert-warning">You do not have permission to edit this post.</div>';
     }
     break;
-    
+
 case 'edit_topic':
     if (isset($_GET['topic_id'])) {
         $topic_id = filter_input(INPUT_GET, 'topic_id', FILTER_SANITIZE_NUMBER_INT);
@@ -236,7 +237,7 @@ case 'edit_topic':
         if (isset($_POST['edit_topic_content'])) {
             $edit_topic_content = filter_input(INPUT_POST, 'edit_topic_content', FILTER_SANITIZE_STRING);
         }
-        
+
         if (isset($_POST['edit_topic'])) {
             $Forum->editTopic($topic['topic_id'], $edit_topic_subject, $edit_topic_content, $user['user_id']);
             echo '<p>You have successfully edited this topic.</p>';
@@ -280,7 +281,7 @@ case 'edit_topic':
         echo '<div class="alert alert-warning">You do not have permission to edit this post.</div>';
     }
     break;
-    
+
 case 'delete_topic':
     if (isset($_GET['topic_id'])) {
         $topic_id = filter_input(INPUT_GET, 'topic_id', FILTER_SANITIZE_NUMBER_INT);
@@ -293,7 +294,7 @@ case 'delete_topic':
         echo '<div class="alert alert-warning">You do not have permission to edit this post.</div>';
     }
     break;
-    
+
 default:
     ?>
     <ol class="breadcrumb">
@@ -335,6 +336,7 @@ default:
     <?php
 
 }
+
 require_once 'includes/private_footer.php';
 $contents = ob_get_contents();
 ob_end_flush();

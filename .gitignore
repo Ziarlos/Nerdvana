@@ -1,3 +1,5 @@
 .env
 .htaccess
+.idea
+error_log
 vendor

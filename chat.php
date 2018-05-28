@@ -7,6 +7,7 @@
  * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
  * @link     https://github.com/Ziarlos
  */
+
 ob_start();
 session_start();
 
@@ -40,21 +41,3 @@ default:
 }
 
 ob_end_flush();
-?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

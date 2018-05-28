@@ -1,18 +1,7 @@
 <?php declare(strict_types=1);
 
-/**
- * Global variables and constants will be defined in this page
- * These variables and constants may be used in multiple pages.
- * Below we start a database connection.
- * Since PHP in moving to PDO and MySQLi, we no longer use MySQL.
- * PHP version 7+
- * 
- * @category Social
- * @package  Social
- * @author   Ziarlos <bruce.wopat@gmail.com>
- * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
- * @link     https://github.com/Ziarlos
- */
+use Nerdvana\Authenticate;
+
 session_start();
 ob_start();
 
@@ -55,8 +44,8 @@ if (Authenticate::isLoggedIn()) {
      *
      * @param int $month Include a value for month
      * @param int $year  Include a value for year
-     * 
-     * @return void
+     *
+     * @return string
      */
     function draw_calendar($month, $year)
     {
@@ -132,8 +121,8 @@ if (Authenticate::isLoggedIn()) {
 } else {
     Authenticate::notLoggedIn();
 }
+
 require_once 'includes/private_footer.php';
 $contents = ob_get_contents();
 ob_end_flush();
 echo $contents;
-?>

@@ -1,18 +1,5 @@
 <?php declare(strict_types=1);
 
-/**
- * Global variables and constants will be defined in this page
- * These variables and constants may be used in multiple pages.
- * Below we start a database connection.
- * Since PHP in moving to PDO and MySQLi, we no longer use MySQL.
- * PHP version 7+
- *
- * @category Social
- * @package  Social
- * @author   Ziarlos <bruce.wopat@gmail.com>
- * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
- * @link     https://github.com/Ziarlos
- */
 require_once './config/config.php';
 
 ob_start();
@@ -29,9 +16,9 @@ case 'login':
         $password = filter_input(INPUT_POST, 'login-password', FILTER_SANITIZE_STRING);
     }
     $error = false;
-    
+
     $pass = HASH("SHA512", $password);
-    
+
     $user = $Database->query("SELECT user_id, user_name, email, password, gender FROM users WHERE email = :email LIMIT 1", array(':email' => $email));
     $user_exists = $Database->count();
 
@@ -54,7 +41,7 @@ case 'login':
         include_once 'includes/public_footer.php';
     }
     break;
-    
+
 case 'logout':
     $_SESSION = array();
     session_destroy();
@@ -64,4 +51,5 @@ case 'logout':
 
 default:
 }
+
 ob_end_flush();

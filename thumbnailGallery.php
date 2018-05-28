@@ -1,26 +1,12 @@
 <?php declare(strict_types=1);
 
 /**
- * Global variables and constants will be defined in this page
- * These variables and constants may be used in multiple pages.
- * Below we start a database connection.
- * Since PHP in moving to PDO and MySQLi, we no longer use MySQL.
- * PHP version 7+
- *
- * @category Social
- * @package  Social
- * @author   Ziarlos <bruce.wopat@gmail.com>
- * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
- * @link     https://github.com/Ziarlos
- */
- 
-/**
  * Generate thumbnail
- * 
+ *
  * @param string $source        Image Source
  * @param string $destination   Image destination
  * @param string $desired_width Image width desired
- * 
+ *
  * @return void
  */
 function makeThumb($source, $destination, $desired_width)
@@ -29,26 +15,26 @@ function makeThumb($source, $destination, $desired_width)
     $source_image = imagecreatefromjpeg($source);
     $width = imagesx($source_image);
     $height = imagesy($source_image);
-    
+
     /* Find desired height of image */
     $desired_height = floor($height * ($desired_width / $width));
-    
+
     /* create virtual image */
     $virtual_image = imagecreatetruecolor($desired_width, $desired_height);
-    
+
     /* copy source image at resized size */
     imagecopyresized($virtual_image, $source_image, 0, 0, 0, 0, $desired_width, $desired_height, $width, $height);
-    
+
     /* create the physical thumbnail image at its destination */
     imagejpeg($virtual_image, $destination);
 }
 
 /**
  * Purpose return files from directory
- * 
+ *
  * @param string $images_directory Image Directory
  * @param array  $extensions       Default accepted extensions
- * 
+ *
  * @return array
  */
 function getFiles($images_directory, $extensions = array("jpg"))
@@ -68,9 +54,9 @@ function getFiles($images_directory, $extensions = array("jpg"))
 
 /**
  * Grab file extension
- * 
+ *
  * @param string $file_name take in file
- * 
+ *
  * @return string
  */
 function get_file_extension($file_name)
