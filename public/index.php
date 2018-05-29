@@ -3,7 +3,7 @@
 ob_start();
 session_start();
 
-require_once 'includes/public_header.php';
+require_once '../includes/public_header.php';
 
 $action = isset($_GET['action']) ? $_GET['action'] : null;
 
@@ -352,5 +352,6 @@ default:
 </div>
 <?php
 }
-require_once 'includes/public_footer.php';
+
+require_once ROOT . '/includes/public_footer.php';
 ob_end_flush();

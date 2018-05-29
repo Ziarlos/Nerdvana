@@ -5,7 +5,7 @@ use Nerdvana\Authenticate;
 session_start();
 ob_start();
 
-require_once 'includes/private_header.php';
+require_once '../includes/private_header.php';
 
 if (Authenticate::isLoggedIn()) {
     /* date settings */
@@ -122,7 +122,7 @@ if (Authenticate::isLoggedIn()) {
     Authenticate::notLoggedIn();
 }
 
-require_once 'includes/private_footer.php';
+require_once ROOT . '/includes/private_footer.php';
 $contents = ob_get_contents();
 ob_end_flush();
 echo $contents;

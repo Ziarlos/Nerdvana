@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-require_once './config/config.php';
+require_once '../config/config.php';
 
 ob_start();
 session_start();
@@ -28,17 +28,17 @@ case 'login':
             $_SESSION['user_id'] = $user['user_id'];
             $_SESSION['email'] = $user['email'];
             $_SESSION['login_status'] = true;
-            require_once './config/config.php';
+            require_once '../config/config.php';
             header('location: private_profile.php');
         } else {
-            include_once 'includes/public_header.php';
+            include_once '../includes/public_header.php';
             echo '<p>That email/password combination does not exist!</p>';
-            include_once 'includes/public_footer.php';
+            include_once '../includes/public_footer.php';
         }
     } else {
-        include_once 'includes/public_header.php';
+        include_once '../includes/public_header.php';
         echo '<p>That email/password combination does not exist!</p>';
-        include_once 'includes/public_footer.php';
+        include_once '../includes/public_footer.php';
     }
     break;
 

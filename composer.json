@@ -15,11 +15,7 @@
     "autoload": {
         "psr-4": {
             "Nerdvana\\": [
-<<<<<<< HEAD
                 "class/"
-=======
-                "class"
->>>>>>> ea909f18347467b41b058e6a32fec95405e467dc
             ]
         }
     },

@@ -3,7 +3,7 @@
 ob_start();
 session_start();
 
-require_once 'includes/private_header.php';
+require_once '../includes/private_header.php';
 
 echo '<h1>New Members</h1>';
 $new_members = '';

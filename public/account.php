@@ -5,7 +5,7 @@ use Nerdvana\Authenticate;
 ob_start();
 session_start();
 
-require_once 'includes/private_header.php';
+require_once '../includes/private_header.php';
 
 if (Authenticate::isLoggedIn()) {
     $action = isset($_GET['action']) ? $_GET['action'] : null;
@@ -328,7 +328,7 @@ if (Authenticate::isLoggedIn()) {
             for ($i = 0; $i < $image_count; $i++) {
                 $id = explode('_', $directory[$i]);
                 if ($id[0] == $user['user_id']) {
-                    echo '<dt> <img src="/images/user_images/' . $directory[$i] . '" alt="Uploaded Image: ' . $directory[$i] . '" width="40%" height="40%"> </dt> <dd> <a href="account.php?action=manage-images&amp;sub-action=delete_image&amp;image_name=' . $directory[$i] . '">Delete Image: ' . $directory[$i] . '</a></dd> <dd><a href="account.php?action=manage-images&amp;sub-action=set_avatar&amp;image_name=' . $directory[$i] . '">Set Image: ' . $directory[$i] . ' as Avatar Picture</a></dd>';
+                    echo '<dt> <img src="/public/images/user_images/EXTERNAL_FRAGMENT" alt="Uploaded Image: ' . $directory[$i] . '' . $directory[$i] . '" width="40%" height="40%"> </dt> <dd> <a href="account.php?action=manage-images&amp;sub-action=delete_image&amp;image_name=EXTERNAL_FRAGMENT">Delete Image: ' . $directory[$i] . '</a></dd> <dd><a href="account.php?action=manage-images&amp;sub-action=set_avatar&amp;image_name=' . $directory[$i] . '">Set Image: ' . $directory[$i] . '' . $directory[$i] . ' as Avatar Picture</a></dd>';
                 }
             }
             echo '</dl>';
@@ -347,7 +347,6 @@ if (Authenticate::isLoggedIn()) {
 
         if (isset($_POST['upload_images']) && $_POST['upload_images'] == "Y") {
             echo '<p>You submitted the images upload form! The coder is researching methods of uploading pictures.</p>';
-
 
             if (isset($_FILES['images']) && count($_FILES['images']['name']) == 1) {
                 if (isset($_FILES['images'])) {
@@ -445,8 +444,7 @@ if (Authenticate::isLoggedIn()) {
     Authenticate::notLoggedIn();
 }
 
-require_once 'includes/private_footer.php';
-
+require_once ROOT . '/includes/private_footer.php';
 $contents = ob_get_contents();
 ob_end_flush();
 echo $contents;

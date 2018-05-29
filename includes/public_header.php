@@ -1,20 +1,7 @@
 <?php declare(strict_types=1);
 
-/**
- * Global variables and constants will be defined in this page
- * These variables and constants may be used in multiple pages.
- * Below we start a database connection.
- * Since PHP in moving to PDO and MySQLi, we no longer use MySQL.
- * PHP version 7+
- *
- * @category Social
- * @package  Social
- * @author   Ziarlos <bruce.wopat@gmail.com>
- * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
- * @link     https://github.com/Ziarlos
- */
-require_once './config/config.php';
-?>     
+require_once '../config/config.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,38 +38,37 @@ require_once './config/config.php';
 
 <body>
 
-
-        <div class="navbar navbar-fixed-top navbar-default" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <p class="pull-left visible-xs">
-                        <button id="offcanvasleft" class="btn btn-xs btn-default" type="button" data-toggle="offcanvasleft"><i class="glyphicon glyphicon-chevron-left"></i> Sign In</button>
-                    </p>
-                    <button class="navbar-toggle" type="button" data-target=".navbar-collapse" data-toggle="collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+    <div class="navbar navbar-fixed-top navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <p class="pull-left visible-xs">
+                    <button id="offcanvasleft" class="btn btn-xs btn-default" type="button" data-toggle="offcanvasleft"><i class="glyphicon glyphicon-chevron-left"></i> Sign In</button>
+                </p>
+                <button class="navbar-toggle" type="button" data-target=".navbar-collapse" data-toggle="collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
                     <a class="navbar-brand" href="javascript:void(0);">Nerdvana</a>
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.php">Home</a></li>
-                        <li><a href="index.php?action=terms_of_service">Terms of Service</a></li>
-                        <li><a href="index.php?action=register">Register</a></li>
-                        <li><a href="index.php?action=lost-password">Lost Password</a></li>
-                        <li><a href="public_profile.php">Profiles</a></li>
-                    </ul>
-                </div> <!-- /.nav-collapse -->
-            </div> <!-- /.container -->
-        </div> <!-- /.navbar -->
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/index.php">Home</a></li>
+                    <li><a href="/index.php?action=terms_of_service">Terms of Service</a></li>
+                    <li><a href="/index.php?action=register">Register</a></li>
+                    <li><a href="/index.php?action=lost-password">Lost Password</a></li>
+                    <li><a href="/public_profile.php">Profiles</a></li>
+                </ul>
+            </div> <!-- /.nav-collapse -->
+        </div> <!-- /.container -->
+    </div> <!-- /.navbar -->
 
     <div class="container">
         <div class="row row-offcanvas row-offcanvas-left">
             <div class="col-xs-6 col-sm-3 col-lg-3 sidebar-offcanvas" id="sidebarLeft" role="navigation">
                 <div class="well sidebar-nav clearfix">
             <aside class="sign-in">
-                  <form action="login.php?action=login" method="post">
+                  <form action="/login.php?action=login" method="post">
                     <div class="form-group">
                         <label for="login-email" class="control-label">Email</label>
                         <input type="text" name="login-email" id="login-email" placeholder="Email" class="form-control">
@@ -112,8 +98,3 @@ require_once './config/config.php';
 
             <div class="col-xs-12 col-sm-9 col-lg-9">
                 <div class="well clearfix">
-                            
-                            
-                            
-                            
-                            

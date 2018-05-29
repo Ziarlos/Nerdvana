@@ -6,14 +6,6 @@ use Nerdvana\Database;
 use Nerdvana\Forum;
 use Nerdvana\User;
 
-define('ROOT', dirname(__DIR__));
-
-require_once ROOT . '/vendor/autoload.php';
-
-$dotenv = new Dotenv\Dotenv(__DIR__);
-$dotenv->load();
-$dotenv->required(['DB_HOSTNAME', 'DB_USERNAME', 'DB_PASSWORD', 'DATABASE'])->notEmpty();
-
 /**
  * Global variables and constants will be defined in this page
  * These variables and constants may be used in multiple pages.
@@ -27,6 +19,21 @@ $dotenv->required(['DB_HOSTNAME', 'DB_USERNAME', 'DB_PASSWORD', 'DATABASE'])->no
  * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
  * @link     https://github.com/Ziarlos
  */
+
+if (!defined('DS')) {
+    define('DS', DIRECTORY_SEPARATOR);
+}
+
+if (!defined('ROOT')) {
+    define('ROOT', dirname(dirname(__FILE__)));
+}
+
+require_once ROOT . '/vendor/autoload.php';
+
+$dotenv = new Dotenv\Dotenv(__DIR__);
+$dotenv->load();
+$dotenv->required(['DB_HOSTNAME', 'DB_USERNAME', 'DB_PASSWORD', 'DATABASE'])->notEmpty();
+
 define('DB_HOSTNAME', getenv('DB_HOSTNAME'));
 define('DB_USERNAME', getenv('DB_USERNAME'));
 define('DB_PASSWORD', getenv('DB_PASSWORD'));
